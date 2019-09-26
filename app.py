@@ -2,11 +2,7 @@ from flask import Flask, render_template, request, abort, send_from_directory
 import joblib
 import numpy as np
 import pandas as pd
-import matplotlib.pyplot as plt
 from werkzeug.utils import secure_filename
-import plotly
-import plotly.graph_objects as go
-import chart_studio.plotly as py
 import io
 import base64 
 import requests
@@ -30,11 +26,14 @@ def result():
         digimon_user=datas[datas['digimon']==nama][['digimon','stage','type','attribute','image']]
         
         def mergeCol(i):
-            return str(i['stage'])+'|'+str(i['type'])+'|'+str(i['attribute'])
+            return str(i['stage'])+'|'+str(i['type'])+'|'+str(i['attribute'])# pokemon1 = pokemon[pokemon['Name']==name1][['Name' ,'HP', 'Attack', 'Defense', 'Sp. Atk', 'Sp. Def', 'Speed', 'Overall']]
         datas['fitur']=datas.apply(mergeCol, axis='columns')
 
         model=CountVectorizer(tokenizer=lambda x:x.split('|'))
         matrixFeature=model.fit_transform(datas['fitur'])
+
+        features=model.get_feature_names()
+        jmlFeatures=len(features)
 
         score=cosine_similarity(matrixFeature)
         print(score)
