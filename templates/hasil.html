@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <style>    
+  table,th,td 
+      {border: 3px solid black; 
+      border-collapse: collapse;} /* biar tergabung, karna html baca th tr td table nya satu2 */
+  </style></style>
+
+  <title>Pokemon</title>
+  <!-- Bootstrap Core CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom fonts for this template -->
+  <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+  <link rel='stylesheet' type='text/css' href={{url_for('static', filename='one-page-wonder.css')}}/>
+
+</head>
+
+<body background="http://pitsel.com/wp-content/uploads/2019/06/simple-forest-background.jpg" style="background-size: cover; text-align: center">
+    <center>
+    <h7><b><mark{background:light-grey}>Digimon Favorit Anda &#x1F91F;</mark></b></h7>
+    <br>
+    <h6>{{nama}}</h6>
+    <img src="{{img}}" height="50" width="50">
+    <h7><mark {background:peach}>&#x1F463;;stage: {{stage}}   &#x2753;;type: {{type}}   &#x2694;; Attribute: {{attribute}}</mark></h7>
+    <table class="table table-hover">
+    <br>
+    <h7><b>Rekomendasi Digimon &#x1F31F;</b></h7>
+    <tr>
+      <thead class="black white-text">
+        <th><center><i> No </i></center></th>
+        <th><center><i> Name </i></center></th>
+        <th><center><i> Digimon </i></center></th>
+        <th><center><i> Stage </i></center></th>
+        <th><center><i> Type </i></center></th>
+        <th><center><i> Attribute </i></center></th>
+      </thead>
+    </tr>
+    <tr>
+        <td><center> 1<sup></sup></center></td>
+        <td><center><b>{{result[0]['digi_suka']}}</b></center></td>
+        <td><center><img src="{{result[0]['img_suka']}}" height="80" width="80"></center></td>
+        <td> {{result[0]['stage_suka']}} </td>
+        <td>{{result[0]['type_suka']}}</td>
+        <td>{{result[0]['attribute_suka']}}</td>
+    </tr>
+    <tr>
+        <td><center> 2<sup></sup></center></td>
+        <td><center><b>{{result[1]['digi_suka']}}</b></center></td>
+        <td><center><img src="{{result[1]['img_suka']}}" height="80" width="80"></center></td>
+        <td> {{result[1]['stage_suka']}} </td>
+        <td>{{result[1]['type_suka']}}</td>
+        <td>{{result[1]['attribute_suka']}}</td>
+    </tr>
+    <tr>
+        <td><center> 3<sup></sup></center></td>
+        <td><center><b>{{result[2]['digi_suka']}}</b></center></td>
+        <td><center><img src="{{result[2]['img_suka']}}" height="80" width="80"></center></td>
+        <td> {{result[2]['stage_suka']}} </td>
+        <td>{{result[2]['type_suka']}}</td>
+        <td>{{result[2]['attribute_suka']}}</td>
+    </tr>
+    <tr>
+        <td><center> 4<sup></sup></center></td>
+        <td><center><b></b>{{result[3]['digi_suka']}}</b></center></td>
+        <td><center><img src="{{result[3]['img_suka']}}" height="80" width="80"></center></td>
+        <td> {{result[3]['stage_suka']}} </td>
+        <td>{{result[3]['type_suka']}}</td>
+        <td>{{result[3]['attribute_suka']}}</td>
+    </tr>
+    <tr>
+        <td><center> 5<sup></sup></center></td>
+        <td><center></center><b>{{result[4]['digi_suka']}}</b></center></td>
+        <td><center><img src="{{result[4]['img_suka']}}" height="80" width="80"></center></td>
+        <td> {{result[4]['stage_suka']}} </td>
+        <td>{{result[4]['type_suka']}}</td>
+        <td>{{result[4]['attribute_suka']}}</td>
+    </tr>    
+    <tr>
+        <td><center> 6<sup></sup></center></td>
+        <td><center><b>{{result[5]['digi_suka']}}</b></center></td>
+        <td><center><img src="{{result[5]['img_suka']}}" height="80" width="80"></center></td>
+        <td> {{result[5]['stage_suka']}} </td>
+        <td>{{result[5]['type_suka']}}</td>
+        <td>{{result[5]['attribute_suka']}}</td>
+    </tr>
+    </table>
+  </center>
+  <div class="overlay"></div>
+  <h7><a href="http://127.0.0.1:5000" class="btn btn-primary btn-xl rounded-pill mt-5" >Home</a></h7>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
