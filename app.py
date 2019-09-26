@@ -27,7 +27,7 @@ def home():
 def result():
     if request.method=='POST':
         nama = request.form['nama'].title()
-        digimon_user=datas[datas['digimon'].title()==nama][['digimon','stage','type','attribute','image']]
+        digimon_user=datas[datas['digimon']==nama][['digimon','stage','type','attribute','image']]
         
         def mergeCol(i):
             return str(i['stage'])+'|'+str(i['type'])+'|'+str(i['attribute'])
